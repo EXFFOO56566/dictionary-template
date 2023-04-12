@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.dictionary.codebhak.navigationdrawer.CheckableLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingBottom="8dp">
+        <ImageView android:id="@+id/navigation_drawer_row_icon"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="16dp"
+            tools:ignore="ContentDescription"/>
+        <TextView android:id="@+id/navigation_drawer_row_text"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="32dp"
+            style="@style/TextAppearance.AppCompat.Small"/>
+    </LinearLayout>
+</com.dictionary.codebhak.navigationdrawer.CheckableLinearLayout>

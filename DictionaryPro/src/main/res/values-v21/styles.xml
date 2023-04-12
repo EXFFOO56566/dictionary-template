@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/green_primary</item>
+        <item name="colorAccent">@color/green_accent_light</item>
+        <item name="android:colorPrimaryDark">@color/green_accent_dark</item>
+        <item name="android:textAppearanceMedium">@style/TextAppearanceDark</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/green_accent_dark</item>
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
+        <item name="searchViewStyle">@style/MySearchViewStyle</item>
+    </style>
+</resources>

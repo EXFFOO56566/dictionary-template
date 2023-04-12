@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.dictionary.codebhak"
+    android:installLocation="auto">
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:supportsRtl="false"
+        tools:ignore="UnusedAttribute">
+        <activity
+            android:name="com.dictionary.codebhak.SplashActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.dictionary.codebhak.MainActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            </activity>
+        <activity
+            android:name="com.dictionary.codebhak.wordbook.WordbookDetailActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.dictionary.codebhak.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dictionary.codebhak.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.dictionary.codebhak.subdict.SubdictDetailActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.dictionary.codebhak.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:screenOrientation="portrait"
+                android:value="com.dictionary.codebhak.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.dictionary.codebhak.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_settings">
+        </activity>
+        <activity android:name="com.dictionary.codebhak.wordbook.ViewonwebToolActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <provider
+            android:name="com.dictionary.codebhak.data.wordbook.WordbookProvider"
+            android:authorities="com.dictionary.codebhak.data.wordbook.WordbookProvider"
+            android:exported="false"/>
+        <provider
+            android:name="com.dictionary.codebhak.data.appdata.WordbookFavoritesProvider"
+            android:authorities="com.dictionary.codebhak.data.appdata.WordbookFavoritesProvider"
+            android:exported="false"/>
+        <provider
+            android:name="com.dictionary.codebhak.data.appdata.WordbookHistoryProvider"
+            android:authorities="com.dictionary.codebhak.data.appdata.WordbookHistoryProvider"
+            android:exported="false"/>
+        <provider
+            android:name="com.dictionary.codebhak.data.subdict.SubdictProvider"
+            android:authorities="com.dictionary.codebhak.data.subdict.SubdictProvider"
+            android:exported="false"/>
+        <provider
+            android:name="com.dictionary.codebhak.data.appdata.SubdictBookmarksProvider"
+            android:authorities="com.dictionary.codebhak.data.appdata.SubdictBookmarksProvider"
+            android:exported="false"/>
+
+        <!--This meta-data tag is required to use Google Play Services.-->
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <!--Include the AdActivity configChanges and theme. -->
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+    </application>
+
+</manifest>

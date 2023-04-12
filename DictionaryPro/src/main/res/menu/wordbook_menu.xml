@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_sound"
+        android:icon="@drawable/ic_sound"
+        android:title="@string/action_sound"
+        app:showAsAction="always"/>
+    <item android:id="@+id/action_add_favorite"
+          android:icon="@drawable/ic_favorite_outline_white_24dp"
+          android:title="@string/action_add_favorite"
+          app:showAsAction="ifRoom"/>
+    <item android:id="@+id/action_remove_favorite"
+          android:icon="@drawable/ic_favorite_white_24dp"
+          android:title="@string/action_remove_favorite"
+          app:showAsAction="ifRoom"/>
+    <item android:id="@+id/menu_search"
+          android:icon="@drawable/ic_search_white_24dp"
+          android:title="@string/search"
+          app:showAsAction="ifRoom|collapseActionView"
+          app:actionViewClass="android.support.v7.widget.SearchView" />
+    <item android:id="@+id/action_clear_favorites"
+          android:title="@string/action_clear_favorites"
+          app:showAsAction="never"
+        android:menuCategory="secondary"
+        android:orderInCategory="2"/>
+    <item android:id="@+id/action_clear_history"
+          android:title="@string/action_clear_history"
+          app:showAsAction="never"
+        android:menuCategory="secondary"
+        android:orderInCategory="3"/>
+    <item android:id="@+id/action_settings"
+        android:title="@string/settings"
+        app:showAsAction="never"
+        android:menuCategory="secondary"
+        android:orderInCategory="4"/>
+    <item android:id="@+id/action_help"
+        android:title="@string/action_help"
+        app:showAsAction="never"
+        android:menuCategory="secondary"
+        android:orderInCategory="6"/>
+</menu>

@@ -1,0 +1,59 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 21
+        versionCode 1
+        versionName '1.0'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    signingConfigs {
+        release
+    }
+    buildTypes {
+        def propsFile = rootProject.file("release.properties")
+        if (propsFile.exists()) {
+            def props = new Properties()
+            props.load(new FileInputStream(propsFile))
+            android.signingConfigs.release.storeFile rootProject.file(props.keyStore)
+            android.signingConfigs.release.storePassword props.keyStorePassword
+            android.signingConfigs.release.keyAlias props.keyAlias
+            android.signingConfigs.release.keyPassword props.keyAliasPassword
+
+            release {
+                signingConfig signingConfigs.release
+                minifyEnabled true
+                proguardFile 'proguard.cfg'
+                zipAlignEnabled true
+            }
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
+    compile 'com.google.android.gms:play-services:6.+'
+}
